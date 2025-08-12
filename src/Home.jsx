@@ -139,7 +139,13 @@ export default function Home({ addToCart }) {
   ];
 
   return (
-    <div className="py-8 flex justify-center">
+    <div className="py-8 flex justify-center relative">
+      {/* Futuristic Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-green-400/10 to-blue-400/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-r from-purple-400/10 to-pink-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      </div>
+      
       <div className="w-full">
         {/* Main Banner Slider */}
         <BannerSlider />
@@ -155,31 +161,31 @@ export default function Home({ addToCart }) {
         
         {/* Featured Products Section */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Featured Products</h2>
-          <p className="mb-8 text-gray-600 text-center">Discover and buy beautiful, sustainable handicrafts made from natural fibers.</p>
+          <h2 className="text-3xl font-bold text-center mb-6 holographic-text">Featured.Products.exe</h2>
+          <p className="mb-8 text-gray-600 text-center font-mono">// Discover sustainable handicrafts.dll</p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {products.map(product => (
-            <div key={product.id} className="bg-white rounded-lg shadow-md p-2 flex flex-col items-center cursor-pointer hover:shadow-lg transition-shadow">
+            <div key={product.id} className="futuristic-card rounded-xl p-4 flex flex-col items-center cursor-pointer hover:transform hover:scale-105 transition-all duration-300 glass">
               <img 
                 src={product.image} 
                 alt={product.name} 
-                className="w-full h-40 object-cover rounded mb-1 hover:scale-105 transition-transform" 
+                className="w-full h-40 object-cover rounded-lg mb-3 hover:scale-110 transition-transform duration-300 border border-green-400/20" 
                 onClick={() => window.location.href = `/products/${product.id}`}
               />
-              <h3 className="font-semibold text-base mb-1">{product.name}</h3>
-              <p className="text-green-700 font-bold mb-1">{product.price}</p>
-              <p className="text-gray-500 text-xs mb-1 text-center">{product.description}</p>
+              <h3 className="font-semibold text-base mb-2 text-center font-mono text-green-400">{product.name}</h3>
+              <p className="text-green-400 font-bold mb-2 text-lg neon-glow-green">{product.price}</p>
+              <p className="text-gray-400 text-xs mb-3 text-center line-clamp-2">{product.description}</p>
               <button 
-                className="bg-blue-600 text-white px-2 py-1 rounded hover:bg-blue-700 text-sm mb-1"
+                className="cyber-button px-4 py-2 rounded-lg text-sm mb-2 font-mono"
                 onClick={() => window.location.href = `/products/${product.id}`}
               >
-                View Details
+                view.exe
               </button>
               {addToCart && (
-                <button className="bg-green-600 text-white px-2 py-1 rounded hover:bg-green-700 text-sm" onClick={() => addToCart(product)}>
-                  Add to Cart
+                <button className="cyber-button px-4 py-2 rounded-lg text-sm font-mono neon-glow-green" onClick={() => addToCart(product)}>
+                  add.cart
                 </button>
               )}
             </div>

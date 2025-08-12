@@ -12,24 +12,24 @@ export default function Cart({ cart = [], removeFromCart }) {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-gray-100 rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold mb-4 text-green-700">Your Cart</h2>
+    <div className="max-w-4xl mx-auto p-6 glass rounded-xl border border-green-400/20 neon-glow-green">
+      <h2 className="text-3xl font-bold mb-4 holographic-text font-mono">Cart.System.exe</h2>
       {cart.length === 0 ? (
-        <p className="text-gray-600">Your cart is empty.</p>
+        <p className="text-gray-400 font-mono">// Cart.empty.status = true</p>
       ) : (
         <>
           <div className="space-y-4 w-full">
             {cart.map((item, idx) => (
-              <div key={idx} className="flex items-center bg-white rounded-lg shadow-md p-4 w-full">
-                <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded mr-4" />
+              <div key={idx} className="flex items-center glass rounded-lg p-4 w-full border border-blue-400/20 hover:neon-glow-blue transition-all duration-300">
+                <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded-lg mr-4 border border-green-400/30" />
                 <div className="flex-1">
-                  <strong className="text-lg">{item.name}</strong>
-                  <div className="text-green-700 font-bold w-full">{item.price}</div>
-                  <div className="text-gray-500 text-sm w-full">{item.description}</div>
+                  <strong className="text-lg text-green-400 font-mono">{item.name}</strong>
+                  <div className="text-green-400 font-bold w-full neon-glow-green">{item.price}</div>
+                  <div className="text-gray-400 text-sm w-full">{item.description}</div>
                 </div>
                 {removeFromCart && (
-                  <button className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 ml-4" onClick={() => removeFromCart(item.id)}>
-                    Remove
+                  <button className="glass text-red-400 px-3 py-1 rounded hover:neon-glow-purple ml-4 font-mono transition-all duration-300 border border-red-400/30" onClick={() => removeFromCart(item.id)}>
+                    remove.exe
                   </button>
                 )}
               </div>
@@ -37,15 +37,15 @@ export default function Cart({ cart = [], removeFromCart }) {
           </div>
           
           {/* Cart Summary */}
-          <div className="mt-8 bg-white rounded-lg shadow-md p-6 w-full">
+          <div className="mt-8 glass rounded-lg p-6 w-full border border-purple-400/20 neon-glow-purple">
             <div className="flex justify-between items-center mb-4">
-              <span className="text-xl font-bold">Total: ₹{calculateTotal()}</span>
+              <span className="text-xl font-bold holographic-text font-mono">Total.sum: ₹{calculateTotal()}</span>
             </div>
             <button 
-              className="w-full bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 font-semibold text-lg"
+              className="w-full cyber-button px-6 py-3 rounded-lg font-semibold text-lg font-mono neon-glow-green transition-all duration-300"
               onClick={() => navigate('/shipping')}
             >
-              Proceed to Checkout
+              checkout.exe
             </button>
           </div>
         </>
