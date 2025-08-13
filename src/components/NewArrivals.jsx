@@ -92,11 +92,11 @@ const NewArrivals = ({ addToCart }) => {
   }, []);
 
   return (
-    <div className="mb-8">
+    <div className="w-full">
       <div className="flex items-center justify-between mb-6">
-        <div>
-          <h2 className="text-2xl font-bold text-gray-800">New Arrivals</h2>
-          <p className="text-gray-600">Fresh handcrafted treasures just for you</p>
+        <div className="w-full">
+          <h2 className="text-3xl font-bold font-mono text-center mb-6 holographic-text">New.Arrivals</h2>
+          <p className="mb-8 text-gray-600 text-center font-mono">// Fresh handcrafted treasures just for you</p>
         </div>
         <div className="flex space-x-2">
           <button

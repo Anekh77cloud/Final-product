@@ -50,35 +50,34 @@ const SplashScreen = ({ onComplete }) => {
   }, [showQuote, quote, onComplete]);
 
   return (
-    <div className={`fixed inset-0 z-50 flex items-center justify-center transition-opacity duration-800 ${isComplete ? 'opacity-0' : 'opacity-100'}`}>
+    <div className={`fixed inset-0 z-50 flex items-center justify-center transition-opacity duration-800 ${isComplete ? 'opacity-0' : 'opacity-100'} cyber-grid`}>
       {/* Earthy Texture Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-amber-100 via-orange-50 to-yellow-100">
-        {/* Coir Fiber Texture Overlay */}
-        <div 
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: 'https://www.thinkrightme.com/wp-content/uploads/2022/08/national-handloom-day-brands-in-india-feature-image-fb.jpg',
-            backgroundSize: '60px 60px'
-          }}
-        />
-        
-        {/* Terracotta Clay Texture */}
-        <div 
-          className="absolute inset-0 opacity-15"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23CD853F' fill-opacity='0.4'%3E%3Cpath d='M20 20c0 11.046-8.954 20-20 20v20h40V20H20z'/%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: '40px 40px'
-          }}
-        />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800">
+        {/* Matrix Rain Effect */}
+        <div className="matrix-rain">
+          {[...Array(50)].map((_, i) => (
+            <div
+              key={i}
+              className="matrix-char"
+              style={{
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${3 + Math.random() * 4}s`
+              }}
+            >
+              {String.fromCharCode(0x30A0 + Math.random() * 96)}
+            </div>
+          ))}
+        </div>
 
-        {/* Floating Craft Elements */}
+        {/* Floating Futuristic Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="craft-element element-1">🌾</div>
-          <div className="craft-element element-2">🏺</div>
-          <div className="craft-element element-3">🧺</div>
-          <div className="craft-element element-4">🌿</div>
-          <div className="craft-element element-5">🪔</div>
-          <div className="craft-element element-6">🥥</div>
+          <div className="craft-element element-1">⚡</div>
+          <div className="craft-element element-2">🔮</div>
+          <div className="craft-element element-3">💎</div>
+          <div className="craft-element element-4">🌐</div>
+          <div className="craft-element element-5">🚀</div>
+          <div className="craft-element element-6">⭐</div>
         </div>
       </div>
 
@@ -91,32 +90,32 @@ const SplashScreen = ({ onComplete }) => {
               <img 
                 src="/src/assets/logo.png" 
                 alt="EarthMart Logo" 
-                className="h-24 w-auto object-contain drop-shadow-lg"
+                className="h-24 w-auto object-contain drop-shadow-lg neon-glow-green rounded-full"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-500 opacity-20 rounded-full blur-xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-blue-500 opacity-30 rounded-full blur-xl animate-pulse"></div>
             </div>
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-700 via-emerald-600 to-teal-700 mb-2 drop-shadow-sm">
-            EarthMart
+          <h1 className="text-5xl md:text-6xl font-bold holographic-text mb-2 drop-shadow-sm font-mono">
+            EarthMart.exe
           </h1>
           
-          <div className="h-1 w-32 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto rounded-full mb-8"></div>
+          <div className="h-1 w-32 bg-gradient-to-r from-green-400 to-blue-500 mx-auto rounded-full mb-8 neon-glow-green"></div>
         </div>
 
         {/* Animated Quote */}
         <div className={`transition-all duration-800 ${showQuote ? 'opacity-100' : 'opacity-0'}`}>
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-amber-200/50 max-w-3xl mx-auto">
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-medium italic">
+          <div className="glass rounded-2xl p-8 shadow-2xl border border-green-400/30 max-w-3xl mx-auto neon-glow-blue">
+            <p className="text-lg md:text-xl text-green-400 leading-relaxed font-medium font-mono">
               "{typedText}"
-              <span className="animate-pulse text-green-600 font-bold">|</span>
+              <span className="animate-pulse text-green-400 font-bold neon-glow-green">|</span>
             </p>
             
             {/* Decorative Elements */}
             <div className="flex justify-center items-center mt-6 space-x-4">
-              <div className="w-8 h-0.5 bg-gradient-to-r from-transparent to-amber-400"></div>
-              <div className="text-2xl">🌱</div>
-              <div className="w-8 h-0.5 bg-gradient-to-l from-transparent to-amber-400"></div>
+              <div className="w-8 h-0.5 bg-gradient-to-r from-transparent to-green-400 neon-glow-green"></div>
+              <div className="text-2xl neon-glow-blue">⚡</div>
+              <div className="w-8 h-0.5 bg-gradient-to-l from-transparent to-green-400 neon-glow-green"></div>
             </div>
           </div>
         </div>
@@ -124,11 +123,11 @@ const SplashScreen = ({ onComplete }) => {
         {/* Loading Indicator */}
         <div className={`mt-12 transition-all duration-500 ${showQuote ? 'opacity-100' : 'opacity-0'}`}>
           <div className="flex justify-center items-center space-x-2">
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-bounce"></div>
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+            <div className="w-2 h-2 bg-green-400 rounded-full animate-bounce neon-glow-green"></div>
+            <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce neon-glow-blue" style={{ animationDelay: '0.1s' }}></div>
+            <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce neon-glow-purple" style={{ animationDelay: '0.2s' }}></div>
           </div>
-          <p className="text-green-700 text-sm mt-2 font-medium">Loading your sustainable marketplace...</p>
+          <p className="text-green-400 text-sm mt-2 font-medium font-mono">// Loading sustainable.marketplace.exe...</p>
         </div>
       </div>
     </div>

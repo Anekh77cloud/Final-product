@@ -6,7 +6,13 @@ export default {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'sans': ['Montserrat', 'ui-sans-serif', 'system-ui'],
+        'serif': ['Merriweather', 'ui-serif', 'Georgia'],
+        'mono': ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular'],
+      },
+    },
   },
   plugins: [],
 }

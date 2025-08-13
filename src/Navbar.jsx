@@ -15,28 +15,28 @@ export default function Navbar({ user, onSignOut, onSearch, isDarkMode, toggleDa
   };
 
   return (
-    <header className={`sticky top-0 w-full z-50 shadow-md px-6 py-3 flex items-center flex-wrap gap-4 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-700'}`}>
+    <header className={`sticky top-0 w-full z-50 glass backdrop-blur-xl px-6 py-3 flex items-center flex-wrap gap-4 border-b ${isDarkMode ? 'border-gray-700/30 text-white' : 'border-gray-200/30 text-gray-700'} scan-lines`}>
       <div className="flex items-center justify-between w-full">
         {/* Logo/Site Name (left) */}
         <div className="flex items-center gap-2">
           <Link to="/">
-            <img src="/src/assets/logo.png" alt="Earth Mart Logo" className="h-12 w-auto object-contain" />
+            <img src="/src/assets/logo.png" alt="Earth Mart Logo" className="h-12 w-auto object-contain pulse-glow rounded-full" />
           </Link>
         </div>
         <div className="flex items-center gap-2">
-          <span className={`text-2xl font-bold ${isDarkMode ? 'text-green-400' : 'text-green-700'}`}>EarthMart</span>
+          <span className="text-2xl font-bold holographic-text font-mono">EarthMart.exe</span>
         </div>
         
 
         {/* Navigation Links (center) */}
-        <nav className="flex items-center gap-6 text-base font-medium flex-shrink-0">
-          <Link to="/" className={`hover:text-green-700 ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>Home</Link>
-          <Link to="/categories" className={`hover:text-green-700 ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>Categories</Link>
-          <Link to="/products" className={`hover:text-green-700 ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>Products</Link>
-          <Link to="/cart" className={`hover:text-green-700 ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>Cart</Link>
-          <Link to="/about" className={`hover:text-green-700 ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>About</Link>
+        <nav className="flex items-center gap-6 text-base font-medium flex-shrink-0 font-mono">
+          <Link to="/" className={`hover:text-green-400 transition-all duration-300 hover:glow ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>home.exe</Link>
+          <Link to="/categories" className={`hover:text-green-400 transition-all duration-300 hover:glow ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>categories.sys</Link>
+          <Link to="/products" className={`hover:text-green-400 transition-all duration-300 hover:glow ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>products.dll</Link>
+          <Link to="/cart" className={`hover:text-green-400 transition-all duration-300 hover:glow ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>cart.bin</Link>
+          <Link to="/about" className={`hover:text-green-400 transition-all duration-300 hover:glow ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>about.info</Link>
           {user && user.email === 'admin@earthmart.com' && (
-            <Link to="/admin" className={`hover:text-green-700 ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>Admin</Link>
+            <Link to="/admin" className={`hover:text-green-400 transition-all duration-300 hover:glow ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>admin.root</Link>
           )}
         </nav>
 
@@ -45,18 +45,18 @@ export default function Navbar({ user, onSignOut, onSearch, isDarkMode, toggleDa
           <input 
             type="text" 
             name="search"
-            placeholder="Search products..." 
-            className={`w-32 sm:w-40 md:w-56 lg:w-72 max-w-md rounded-l-full border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-400 ${isDarkMode ? 'border-gray-600 bg-gray-700 text-white placeholder-gray-400' : 'border-gray-300 bg-white text-gray-700'}`}
+            placeholder="search.query..." 
+            className={`w-32 sm:w-40 md:w-56 lg:w-72 max-w-md rounded-l-full border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-400 glass font-mono ${isDarkMode ? 'border-gray-600/30 text-white placeholder-gray-400' : 'border-gray-300/30 text-gray-700 placeholder-gray-500'}`}
           />
-          <button type="submit" className="px-4 py-2 rounded-r-full bg-green-600 text-white font-semibold hover:bg-green-700 transition border border-green-600">
-            Search
+          <button type="submit" className="px-4 py-2 rounded-r-full cyber-button font-mono font-semibold transition-all duration-300">
+            exec
           </button>
         </form>
 
         {/* Dark Mode Toggle */}
         <button
           onClick={toggleDarkMode}
-          className={`p-2 rounded-full transition-colors ${isDarkMode ? 'bg-gray-700 hover:bg-gray-600 text-yellow-400' : 'bg-gray-100 hover:bg-gray-200 text-gray-600'}`}
+          className={`p-2 rounded-full transition-all duration-300 glass neon-glow-blue ${isDarkMode ? 'text-yellow-400 hover:text-yellow-300' : 'text-gray-600 hover:text-gray-800'}`}
           title={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
         >
           {isDarkMode ? (

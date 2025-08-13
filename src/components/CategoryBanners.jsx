@@ -34,7 +34,7 @@ const CategoryBanners = () => {
 
   return (
     <div className="mb-8">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Shop by Category</h2>
+      <h2 className="text-3xl font-bold font-mono text-center mb-6 holographic-text">Shop by Category</h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {categories.map((category) => (
           <div

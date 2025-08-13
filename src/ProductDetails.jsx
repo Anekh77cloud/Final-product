@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const products = [
@@ -144,25 +144,176 @@ const products = [
     origin: 'Kota, Rajasthan',
     care: 'Place it Where it Can Shine',
     features: ['Lightweight', 'Aesthetics', 'Unlimited Use', 'Durable'],
-    category: 'Reeds Products'
-  },
+    category: 'Reeds Products',
+    colors: [
+      {
+        name: 'Natural',
+        color: '#D2B48C',
+        image: 'https://thearchitectsdiary.com/wp-content/uploads/2025/02/Handcrafted-Products-11.png'
+      },
+      {
+        name: 'Dark Brown',
+        color: '#8B4513',
+        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=compress&cs=tinysrgb&w=400'
+      },
+      {
+        name: 'Light Oak',
+        color: '#DEB887',
+        image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=compress&cs=tinysrgb&w=400'
+      }
+    ]
+  }
 ];
+
+// Add color variants for shirt products
+const productColorVariants = {
+  14: { // Tangaliya Shirt
+    colors: [
+      {
+        name: 'Natural White',
+        color: '#F5F5DC',
+        image: 'src/assets/tangaliya_shirt.jpeg'
+      },
+      {
+        name: 'Sky Blue',
+        color: '#87CEEB',
+        image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=compress&cs=tinysrgb&w=400'
+      },
+      {
+        name: 'Forest Green',
+        color: '#228B22',
+        image: 'https://images.unsplash.com/photo-1583743814966-8936f37f4678?auto=compress&cs=tinysrgb&w=400'
+      },
+      {
+        name: 'Sunset Orange',
+        color: '#FF8C00',
+        image: 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=compress&cs=tinysrgb&w=400'
+      },
+      {
+        name: 'Deep Purple',
+        color: '#9932CC',
+        image: 'https://images.unsplash.com/photo-1571945153237-4929e783af4a?auto=compress&cs=tinysrgb&w=400'
+      }
+    ]
+  },
+  23: { // Khadi Cotton Shirt
+    colors: [
+      {
+        name: 'Natural Khadi',
+        color: '#F5F5DC',
+        image: 'https://sellon.kraftly.com/web/tr:f-auto,w-1200,h-1200,cm-pad_resize,pr-true/shop_28610/4_1472131866.jpg'
+      },
+      {
+        name: 'Indigo Blue',
+        color: '#4B0082',
+        image: 'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=compress&cs=tinysrgb&w=400'
+      },
+      {
+        name: 'Earthy Brown',
+        color: '#8B4513',
+        image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=compress&cs=tinysrgb&w=400'
+      },
+      {
+        name: 'Sage Green',
+        color: '#9CAF88',
+        image: 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=compress&cs=tinysrgb&w=400'
+      }
+    ]
+  },
+  // Add more products with color variants as needed
+};
 
 export default function ProductDetails({ addToCart }) {
   const { id } = useParams();
   const product = products.find(p => p.id === Number(id));
+  const colorVariants = productColorVariants[Number(id)];
+  
+  const [selectedColor, setSelectedColor] = useState(0);
+  const [currentImage, setCurrentImage] = useState(product?.image);
+  const [isImageLoading, setIsImageLoading] = useState(false);
+
+  // Update current image when product changes
+  React.useEffect(() => {
+    if (product) {
+      if (colorVariants && colorVariants.colors.length > 0) {
+        setCurrentImage(colorVariants.colors[0].image);
+        setSelectedColor(0);
+      } else {
+        setCurrentImage(product.image);
+      }
+    }
+  }, [product, colorVariants]);
+
+  const handleColorChange = (colorIndex) => {
+    if (colorVariants && colorVariants.colors[colorIndex]) {
+      setIsImageLoading(true);
+      setSelectedColor(colorIndex);
+      
+      // Simulate image loading delay for smooth transition
+      setTimeout(() => {
+        setCurrentImage(colorVariants.colors[colorIndex].image);
+        setIsImageLoading(false);
+      }, 200);
+    }
+  };
 
   if (!product) {
     return <div className="py-8"><h2 className="text-xl text-red-600">Product not found</h2></div>;
   }
 
   return (
-    <div className="py-8 max-w-4xl mx-auto">
+    <div className="py-8 max-w-4xl w-full mx-auto">
       <div className="bg-white rounded-lg shadow-lg overflow-hidden">
         <div className="md:flex">
           {/* Product Image */}
           <div className="md:w-1/2">
-            <img src={product.image} alt={product.name} className="w-full h-96 object-cover" />
+            <div className="relative">
+              <img 
+                src={currentImage} 
+                alt={product.name} 
+                className={`w-full h-96 object-cover transition-opacity duration-300 ${isImageLoading ? 'opacity-50' : 'opacity-100'}`}
+              />
+              {isImageLoading && (
+                <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-50">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-green-600"></div>
+                </div>
+              )}
+            </div>
+            
+            {/* Color Swatches */}
+            {colorVariants && colorVariants.colors && (
+              <div className="mt-4 px-4">
+                <h4 className="text-sm font-medium text-gray-700 mb-3">Available Colors:</h4>
+                <div className="flex items-center space-x-3">
+                  {colorVariants.colors.map((colorOption, index) => (
+                    <div key={index} className="flex flex-col items-center">
+                      <button
+                        onClick={() => handleColorChange(index)}
+                        className={`w-8 h-8 rounded-full border-2 transition-all duration-200 hover:scale-110 ${
+                          selectedColor === index 
+                            ? 'border-green-600 shadow-lg ring-2 ring-green-200' 
+                            : 'border-gray-300 hover:border-gray-400'
+                        }`}
+                        style={{ backgroundColor: colorOption.color }}
+                        title={colorOption.name}
+                      />
+                      <span className={`text-xs mt-1 transition-colors duration-200 ${
+                        selectedColor === index ? 'text-green-600 font-medium' : 'text-gray-500'
+                      }`}>
+                        {colorOption.name}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                {selectedColor !== null && colorVariants.colors[selectedColor] && (
+                  <p className="text-sm text-gray-600 mt-2">
+                    Selected: <span className="font-medium text-green-600">
+                      {colorVariants.colors[selectedColor].name}
+                    </span>
+                  </p>
+                )}
+              </div>
+            )}
           </div>
           
           {/* Product Details */}
@@ -172,7 +323,7 @@ export default function ProductDetails({ addToCart }) {
             <p className="text-gray-600 mb-6 leading-relaxed">{product.description}</p>
             
             {/* Product Specifications */}
-            <div className="space-y-4 mb-6">
+            <div className="space-y-4 mb-6 w-full">
               <h3 className="text-xl font-semibold text-gray-800">Product Details</h3>
               <div className="grid grid-cols-1 gap-3">
                 <div className="flex justify-between border-b pb-2">

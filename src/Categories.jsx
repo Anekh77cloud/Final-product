@@ -167,7 +167,53 @@ const Categories = () => {
       productCount: 7,
       discount: "15% OFF",
       bgColor: "from-gray-400 to-gray-500"
+    },
+    {
+      id: 8,
+      name: "Home Decor",
+      description: "Beautifully crafted items for your living space",
+      image: "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=400",
+      productCount: 4,
+      discount: "25% OFF",
+      bgColor: "from-pink-400 to-red-500"
+    },
+    {
+      id: 9,
+      name: "Accessories",
+      description: "Handcrafted accessories to complement your style",
+      image: "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=400",
+      productCount: 5,
+      discount: "30% OFF",
+      bgColor: "from-indigo-400 to-purple-500"
+    },
+    {
+      id: 10,
+      name: "Reed products",
+      description: "Eco-friendly reed crafts",
+      image: "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=400",
+      productCount: 5,
+      discount: "30% OFF",
+      bgColor: "from-indigo-400 to-purple-500"
+    },
+    {
+      id: 11,
+      name: "winter wear",
+      description: "Warm and cozy winter clothing",
+      image: "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=400",
+      productCount: 5,
+      discount: "30% OFF",
+      bgColor: "from-indigo-400 to-purple-500"
+    },
+    {
+      id: 12,
+      name: "Mansoon",
+      description: "Rainy season essentials",
+      image: "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=400",
+      productCount: 5,
+      discount: "30% OFF",
+      bgColor: "from-indigo-400 to-purple-500"
     }
+
   ];
 
   // Auto-slide effects
@@ -216,13 +262,13 @@ const Categories = () => {
       <div className="max-full mx-auto px-4">
         {/* Page Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">Craft Categories</h1>
+          <h1 className="text-4xl font-bold text-gray-800 mb-4 font-mono holographic-text">Craft Categories</h1>
           <p className="text-gray-600 text-lg">Discover authentic handcrafted treasures from across India</p>
         </div>
 
         {/* Craft Stories Banner */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">From Village to Your Home</h2>
+          <h2 className="text-2xl font-bold text-green-300 mb-4 font-mono ">From Our Villages to Your Home</h2>
           <div className="relative h-80 overflow-hidden rounded-xl shadow-lg">
             <div 
               className="flex transition-transform duration-700 ease-in-out h-full"
@@ -235,9 +281,9 @@ const Categories = () => {
                 >
                   <div className="w-full px-8 md:px-16 flex items-center justify-between">
                     {/* Left Side - Artisan */}
-                    <div className="flex-1 text-white">
+                    <div className="flex-1 text-white space-y-4">
                       <div className="mb-4">
-                        <span className="text-sm font-medium bg-white bg-opacity-20 px-3 py-1 rounded-full">
+                        <span className="text-sm font-medium bg-white bg-opacity-20 px-3 py-1 rounded-full  ">
                           {story.category}
                         </span>
                       </div>
@@ -293,7 +339,7 @@ const Categories = () => {
           <div className="bg-gradient-to-r from-red-500 to-pink-600 rounded-xl p-6 text-white text-center relative overflow-hidden">
             <div className="absolute inset-0 bg-black bg-opacity-10" />
             <div className="relative z-10">
-              <h3 className="text-2xl font-bold mb-2">⏳ Limited Time Offer!</h3>
+              <h3 className="text-2xl font-bold mb-2 font-mono">⏳ Limited Time Offer!</h3>
               <p className="text-lg mb-4">Only 50 Clay Water Pots Left – Offer Ends Soon</p>
               <div className="flex justify-center space-x-4 mb-4">
                 <div className="bg-white bg-opacity-20 px-3 py-2 rounded">
@@ -313,7 +359,7 @@ const Categories = () => {
                   <div className="text-xs">Seconds</div>
                 </div>
               </div>
-              <button className="bg-white text-red-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+              <button className="bg-white text-red-600 px-6 py-3 font-mono rounded-full font-semibold hover:bg-gray-100 transition-colors">
                 Shop Now - 40% OFF
               </button>
             </div>
@@ -322,7 +368,7 @@ const Categories = () => {
 
         {/* Seasonal/Festival Banners */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">Seasonal Collections</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-4 font-mono holographic-text">Seasonal Collections</h2>
           <div className="relative h-64 overflow-hidden rounded-xl shadow-lg">
             <div 
               className="flex transition-transform duration-500 ease-in-out h-full"
@@ -339,7 +385,7 @@ const Categories = () => {
                   />
                   <div className="relative z-10 w-full px-8 md:px-16 flex items-center justify-between">
                     <div className="text-white">
-                      <div className="text-3xl mb-2">{banner.decorativeElements}</div>
+                      <div className="text-3xl mb-2 ">{banner.decorativeElements}</div>
                       <h3 className="text-3xl md:text-4xl font-bold mb-2">{banner.title}</h3>
                       <p className="text-xl mb-2">{banner.subtitle}</p>
                       <p className="text-sm opacity-90 mb-4">{banner.description}</p>
@@ -366,7 +412,7 @@ const Categories = () => {
               </div>
             </div>
             <div className="relative z-10">
-              <h3 className="text-2xl font-bold mb-2">🌍 Our Eco-Friendly Promise</h3>
+              <h3 className="text-2xl font-bold mb-2 font-mono">🌍 Our Eco-Friendly Promise</h3>
               <p className="text-lg">Every product saves plastic from our landfills and supports sustainable living</p>
             </div>
           </div>
@@ -374,7 +420,7 @@ const Categories = () => {
 
         {/* Artisan Highlights */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">Meet Our Artisans</h2>
+          <h2 className="text-3xl font-bold text-green-300 mb-4 font-mono ">Meet Our Artisans</h2>
           <div className="bg-white rounded-xl shadow-lg p-6">
             <div className="flex items-center space-x-6">
               <img 
@@ -400,7 +446,7 @@ const Categories = () => {
 
         {/* Categories Grid */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">Browse Categories</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-6 font-mono holographic-text">Browse Categories</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {categories.map((category) => (
               <Link

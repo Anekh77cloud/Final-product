@@ -76,115 +76,136 @@ export default function Login({ onLogin }) {
   };
 
   return (
-    <div className="auth-page">
+    <div className="auth-page cyber-grid">
+      {/* Futuristic Background Elements */}
+      <div className="floating-particles">
+        {[...Array(30)].map((_, i) => (
+          <div
+            key={i}
+            className="particle"
+            style={{
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 8}s`,
+              animationDuration: `${8 + Math.random() * 4}s`
+            }}
+          />
+        ))}
+      </div>
+      
       <div className={`container ${isSignUp ? 'right-panel-active' : ''}`} id="container">
         {/* Sign Up Form */}
-        <div className="form-container sign-up-container">
+        <div className="form-container sign-up-container glass">
           <form onSubmit={handleSignupSubmit}>
-            <h1>Create Account</h1>
+            <h1 className="holographic-text font-mono">Create.Account.exe</h1>
             <div className="social-container flex gap-4">
               <a href="#" className="social text-blue-600"><FaFacebookF size={24} /></a>
               <a href="#" className="social text-red-500"><FaGooglePlusG size={24} /></a>
               <a href="#" className="social text-pink-500"><FaInstagram size={24} /></a>
             </div>
-            <span>or use your email for registration</span>
+            <span className="font-mono text-gray-400">// or use email.registration.dll</span>
             <input
               type="text"
               name="name"
-              placeholder="Name"
+              placeholder="user.name"
               value={signupData.name}
               onChange={handleSignupChange}
+              className="glass font-mono"
               required
             />
             <input
               type="email"
               name="email"
-              placeholder="Email"
+              placeholder="user.email"
               value={signupData.email}
               onChange={handleSignupChange}
+              className="glass font-mono"
               required
             />
             <input
               type="password"
               name="password"
-              placeholder="Password"
+              placeholder="user.password"
               value={signupData.password}
               onChange={handleSignupChange}
+              className="glass font-mono"
               required
             />
             <input
               type="password"
               name="confirmPassword"
-              placeholder="Confirm Password"
+              placeholder="confirm.password"
               value={signupData.confirmPassword}
               onChange={handleSignupChange}
+              className="glass font-mono"
               required
             />
-            <button type="submit" disabled={isLoading}>
-              {isLoading ? 'Creating...' : 'Sign Up'}
+            <button type="submit" disabled={isLoading} className="cyber-button font-mono">
+              {isLoading ? 'creating.user...' : 'signup.exe'}
             </button>
           </form>
         </div>
 
         {/* Sign In Form */}
-        <div className="form-container sign-in-container">
+        <div className="form-container sign-in-container glass">
           <form onSubmit={handleLoginSubmit}>
-            <h1>Sign in</h1>
+            <h1 className="holographic-text font-mono">Login.System.exe</h1>
             <div className="social-container flex gap-4">
               <a href="#" className="social text-blue-600"><FaFacebookF size={24} /></a>
               <a href="#" className="social text-red-500"><FaGooglePlusG size={24} /></a>
               <a href="#" className="social text-pink-500"><FaInstagram size={24} /></a>
             </div>
-            <span>or use your account</span>
+            <span className="font-mono text-gray-400">// or use account.credentials</span>
             <input
               type="email"
               name="email"
-              placeholder="Email"
+              placeholder="user.email"
               value={loginData.email}
               onChange={handleLoginChange}
+              className="glass font-mono"
               required
             />
             <input
               type="password"
               name="password"
-              placeholder="Password"
+              placeholder="user.password"
               value={loginData.password}
               onChange={handleLoginChange}
+              className="glass font-mono"
               required
             />
             <div className="remember-forgot">
-              <label>
+              <label className="font-mono text-gray-400">
                 <input
                   type="checkbox"
                   name="rememberMe"
                   checked={loginData.rememberMe}
                   onChange={handleLoginChange}
                 />
-                Remember me
+                remember.user
               </label>
-              <a href="#">Forgot your password?</a>
+              <a href="#" className="font-mono text-green-400 hover:neon-glow-green">forgot.password?</a>
             </div>
-            <button type="submit" disabled={isLoading}>
-              {isLoading ? 'Signing In...' : 'Sign In'}
+            <button type="submit" disabled={isLoading} className="cyber-button font-mono">
+              {isLoading ? 'authenticating...' : 'login.exe'}
             </button>
           </form>
         </div>
 
         {/* Overlay */}
-        <div className="overlay-container">
-          <div className="overlay">
+        <div className="overlay-container glass">
+          <div className="overlay cyber-grid">
             <div className="overlay-panel overlay-left">
-              <h1>Welcome Back!</h1>
-              <p>To keep connected with us please login with your personal info</p>
-              <button className="ghost" onClick={() => setIsSignUp(false)}>
-                Sign In
+              <h1 className="holographic-text font-mono">Welcome.Back.exe</h1>
+              <p className="font-mono">// Login with credentials.dll</p>
+              <button className="ghost cyber-button font-mono" onClick={() => setIsSignUp(false)}>
+                login.exe
               </button>
             </div>
             <div className="overlay-panel overlay-right">
-              <h1>Hello, Friend!</h1>
-              <p>Enter your personal details and start journey with us</p>
-              <button className="ghost" onClick={() => setIsSignUp(true)}>
-                Sign Up
+              <h1 className="holographic-text font-mono">Hello.User.exe</h1>
+              <p className="font-mono">// Initialize new.user.account</p>
+              <button className="ghost cyber-button font-mono" onClick={() => setIsSignUp(true)}>
+                signup.exe
               </button>
             </div>
           </div>
