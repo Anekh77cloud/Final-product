@@ -12,7 +12,16 @@ export default function Cart({ cart = [], removeFromCart }) {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 glass rounded-xl border border-green-400/20 neon-glow-green">
+    <div className="py-8 flex justify-center relative">
+      {/* Futuristic Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-green-400/10 to-blue-400/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-r from-purple-400/10 to-pink-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      </div>
+      
+      <div className="w-full">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="glass rounded-xl border border-green-400/20 neon-glow-green p-6">
       <h2 className="text-3xl font-bold mb-4 holographic-text font-mono">Cart.System.exe</h2>
       {cart.length === 0 ? (
         <p className="text-gray-400 font-mono">// Cart.empty.status = true</p>
@@ -50,6 +59,9 @@ export default function Cart({ cart = [], removeFromCart }) {
           </div>
         </>
       )}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

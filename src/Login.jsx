@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { FaFacebookF, FaGooglePlusG, FaInstagram } from "react-icons/fa";
 
-
 export default function Login({ onLogin }) {
   const [isSignUp, setIsSignUp] = useState(false);
   const [loginData, setLoginData] = useState({

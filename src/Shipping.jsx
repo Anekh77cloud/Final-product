@@ -53,7 +53,15 @@ export default function Shipping({ cart = [] }) {
   }
 
   return (
-    <div className="py-8 max-w-4xl mx-auto">
+    <div className="py-8 flex justify-center relative">
+      {/* Futuristic Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-green-400/10 to-blue-400/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-r from-purple-400/10 to-pink-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      </div>
+      
+      <div className="w-full">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 className="text-3xl font-mono font-bold mb-6 text-green-700 holographic-text">Checkout</h2>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -205,6 +213,8 @@ export default function Shipping({ cart = [] }) {
               <span>₹{total.toFixed(2)}</span>
             </div>
           </div>
+        </div>
+      </div>
         </div>
       </div>
     </div>

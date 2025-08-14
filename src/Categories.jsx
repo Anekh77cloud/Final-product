@@ -172,7 +172,7 @@ const Categories = () => {
       id: 8,
       name: "Home Decor",
       description: "Beautifully crafted items for your living space",
-      image: "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "https://www.schlage.com/content/dam/sch-us/blog/post-images/2023/03-march/home-decor-with-natural-materials-rattan-chair-cane-console-and-wicker-basket-for-plants.jpg",
       productCount: 4,
       discount: "25% OFF",
       bgColor: "from-pink-400 to-red-500"
@@ -181,17 +181,17 @@ const Categories = () => {
       id: 9,
       name: "Accessories",
       description: "Handcrafted accessories to complement your style",
-      image: "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "https://static.vecteezy.com/system/resources/thumbnails/024/542/026/small_2x/natural-cosmetics-ingredients-and-bathroom-or-spa-accessories-arranged-on-orange-banner-background-generative-ai-photo.jpg",
       productCount: 5,
-      discount: "30% OFF",
+      discount: "15% OFF",
       bgColor: "from-indigo-400 to-purple-500"
     },
     {
       id: 10,
       name: "Reed products",
       description: "Eco-friendly reed crafts",
-      image: "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=400",
-      productCount: 5,
+      image: "https://thearchitectsdiary.com/wp-content/uploads/2025/02/Handcrafted-Products-11.png",
+      productCount: 1,
       discount: "30% OFF",
       bgColor: "from-indigo-400 to-purple-500"
     },
@@ -199,18 +199,18 @@ const Categories = () => {
       id: 11,
       name: "winter wear",
       description: "Warm and cozy winter clothing",
-      image: "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "https://th.bing.com/th/id/R.c7c4d064acbe618bd4b314bd5c8e446d?rik=mlC9yfi%2bPtsFCA&riu=http%3a%2f%2fskirttherulesblog.com%2fwp-content%2fuploads%2f2016%2f02%2fSkirt-The-Rules-Neutral-WInter-Accessories-1.jpg&ehk=nDBJFHsn%2bLlO%2bd%2bc7vBIC3fys1ZFH5QTVINBJISwl6I%3d&risl=&pid=ImgRaw&r=0",
       productCount: 5,
-      discount: "30% OFF",
+      discount: "45% OFF",
       bgColor: "from-indigo-400 to-purple-500"
     },
     {
       id: 12,
       name: "Mansoon",
       description: "Rainy season essentials",
-      image: "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=400",
-      productCount: 5,
-      discount: "30% OFF",
+      image: "https://tse4.mm.bing.net/th/id/OIP.h1imuIXFzQchjovwsw9jDQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3",
+      productCount: 2,
+      discount: "10% OFF",
       bgColor: "from-indigo-400 to-purple-500"
     }
 
