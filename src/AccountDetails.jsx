@@ -14,7 +14,7 @@ export default function AccountDetails({ user, onSignOut, isDarkMode }) {
         {user.name}
       </button>
       {showMenu && (
-        <div className={`absolute right-0 mt-2 w-48 rounded shadow-lg border z-50 ${isDarkMode ? 'bg-gray-800 border-gray-600' : 'bg-white border-gray-200'}`}>
+        <div className={`absolute right-0 mt-2 w-48 rounded shadow-lg border z-[9999] ${isDarkMode ? 'bg-gray-800 border-gray-600' : 'bg-white border-gray-200'}`}>
           <div className={`px-4 py-2 border-b ${isDarkMode ? 'border-gray-600 text-gray-300' : 'border-gray-200 text-gray-700'}`}>
             <div className="font-bold">{user.name}</div>
             <div className="text-sm">{user.email}</div>
