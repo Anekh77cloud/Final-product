@@ -15,7 +15,7 @@ export default function Navbar({ user, onSignOut, onSearch, isDarkMode, toggleDa
   };
 
   return (
-    <header className={`sticky top-0 w-full z-50 glass backdrop-blur-xl px-6 py-3 flex items-center flex-wrap gap-4 border-b ${isDarkMode ? 'border-gray-700/30 text-white' : 'border-gray-200/30 text-gray-700'} scan-lines`}>
+    <header className={`sticky top-0 w-full z-40 glass backdrop-blur-xl px-6 py-3 flex items-center flex-wrap gap-4 border-b ${isDarkMode ? 'border-gray-700/30 text-white' : 'border-gray-200/30 text-gray-700'} scan-lines`}>
       <div className="flex items-center justify-between w-full">
         {/* Logo/Site Name (left) */}
         <div className="flex items-center gap-2">
@@ -70,7 +70,7 @@ export default function Navbar({ user, onSignOut, onSearch, isDarkMode, toggleDa
           )}
         </button>
         {/* Account Details (top right) */}
-        <div className="ml-4">
+        <div className="ml-4 relative">
           <AccountDetails user={user} onSignOut={() => { onSignOut(); navigate('/login'); }} isDarkMode={isDarkMode} />
         </div>
       </div>
